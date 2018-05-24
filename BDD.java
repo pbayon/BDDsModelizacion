@@ -157,7 +157,7 @@ public class BDD {
 
 	private HashMap<Integer, Boolean> anySat(int u, HashMap<Integer, Boolean> asig) throws Exception {
 		if (u == 0)
-			throw new Exception("Se llamó al método anySat pero la función es insatisfacible");
+			throw new Exception("Se llamÃ³ al mÃ©todo anySat pero la funciÃ³n es insatisfacible");
 		else if (u == 1)
 			return asig;
 		else {
@@ -171,6 +171,31 @@ public class BDD {
 			}
 
 		}
+	}
+	public void toDot(String name) {
+		System.out.println("digraph " + name + " {");
+		if (root == 0)
+			System.out.println("0 [shape=box];");// insatisfacible
+		else if (root == 1)
+			System.out.println("1 [shape=box];");// tautology
+		else {
+			System.out.println("0 [shape=box];");
+			System.out.println("1 [shape=box];");
+			ArrayList<String> variables = Tree.variables;
+			for (int i = 2; i <= root; i++) {
+				Triple t = T.get(i);
+				System.out.println(i + "[label=" + variables.get(t.var()) + ",xlabel=" + i + "];");
+			}
+			for (int i = root; i >= 2; i--) {
+				Triple t = T.get(i);
+				int l = t.low();
+				int h = t.high();
+				System.out.println(i + "->" + l + "[style=dashed];");
+				System.out.println(i + "->" + h + ";");
+			}
+		}
+		System.out.println("}");
+
 	}
 	
 	    
