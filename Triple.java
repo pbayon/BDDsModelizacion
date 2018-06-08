@@ -1,11 +1,13 @@
 
-public class Triple {
-	public int i, l, h;
+public class NodeComponents {
+	private int var;
+	private int low;
+	private int high;
 
-	public Triple(int i, int l, int h) {
-		this.i = i;
-		this.l = l;
-		this.h = h;
+	public Triple(int var, int low, int high) {
+		this.var = var;
+		this.low = low;
+		this.high = high;
 	}
 
 	@Override
@@ -39,14 +41,14 @@ public class Triple {
 	}
 
 	public int low() {
-		return l;
+		return low;
 	}
 
 	public int high() {
-		return h;
+		return high;
 	}
 
 	public int var() {
-		return i;
+		return var;
 	}
 }
