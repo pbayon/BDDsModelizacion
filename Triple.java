@@ -4,7 +4,7 @@ public class NodeComponents {
 	private int low;
 	private int high;
 
-	public Triple(int var, int low, int high) {
+	public NodeComponents(int var, int low, int high) {
 		this.var = var;
 		this.low = low;
 		this.high = high;
