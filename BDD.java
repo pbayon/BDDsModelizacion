@@ -27,7 +27,8 @@ public class BDD {
 		if (i == numVar) {
 			return t.eval(bits, t.root());
 		}
-
+		int x;
+		int y;
 		bits[i] = 0;
 		int v0 = build(t, i + 1);
 		bits[i] = 1;
