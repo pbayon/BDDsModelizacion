@@ -6,7 +6,7 @@ import java.util.StringTokenizer;
 public class Tree {
 	private Node root;
 	public static ArrayList<String> variables;
-	static int n; //numero de variables 
+	static int n; //numero de variables
 	static StringTokenizer tokens;
 	static String t;//token actual
 
@@ -45,6 +45,7 @@ public class Tree {
 
 	private Node B() throws Exception {
 		Node c = C();
+		int x;
 		if (t.equals("->")) {
 			valida("->");
 			Node b = B();
@@ -136,8 +137,8 @@ public class Tree {
 	private int op(int op,int u1, int u2) {
 		// TODO Auto-generated method stub
 		switch (op) {
-		
-		
+
+
 		case NOT:
 			return (u1+1)%2;
 		case AND:
