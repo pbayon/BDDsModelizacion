@@ -9,7 +9,8 @@ public class Par {
 		if(o instanceof Par) {
 		Par p = (Par) o;
 		return v0==p.v0 && v1 == p.v1;
-		}else
+		}
+		else
 			return false;
 	}
 	public int hashCode() {
