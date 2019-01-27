@@ -17,19 +17,19 @@ public class Tree {
 		n = 0;
 		root = A();
 		if (tokens.hasMoreTokens())
-			throw new Exception("Se completó el análisis sintáctico pero se recibió el token:\t" + tokens.nextToken());
+			throw new Exception("Se completï¿½ el anï¿½lisis sintï¿½ctico pero se recibiï¿½ el token:\t" + tokens.nextToken());
 	}
 
 	private static void valida(String s) throws Exception {
 		if (!t.equals(s))
 			throw new Exception(
-					"Error en el análisis sintáctico se esperaba el token:\t" + s + "\n\tPero se recibió:\t" + t);
+					"Error en el anï¿½lisis sintï¿½ctico se esperaba el token:\t" + s + "\n\tPero se recibiï¿½:\t" + t);
 		else if (tokens.hasMoreTokens())
 			t = tokens.nextToken();
 	}
 
 	/*
-	 * Gramática: A ::= B | B <-> A B ::= C | C -> B C ::= D | D | C D ::= E | E & F
+	 * Gramï¿½tica: A ::= B | B <-> A B ::= C | C -> B C ::= D | D | C D ::= E | E & F
 	 * F ::= (A) | ! F | var
 	 */
 	private Node A() throws Exception {
@@ -92,7 +92,7 @@ public class Tree {
 				int pos = variable(t);
 				return new Node(pos);
 			} else
-				throw new Exception("Error léxico, token no soportado:\t" + t);
+				throw new Exception("Error lï¿½xico, token no soportado:\t" + t);
 		}
 	}
 
@@ -136,6 +136,8 @@ public class Tree {
 	private int op(int op,int u1, int u2) {
 		// TODO Auto-generated method stub
 		switch (op) {
+		
+		
 		case NOT:
 			return (u1+1)%2;
 		case AND:
