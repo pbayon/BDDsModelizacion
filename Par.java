@@ -1,6 +1,6 @@
 
 public class Par {
-	public int v0, v1,v2;
+	public int v0, v1,v2,v3;
 	public Par(int i,int j){
 		v0=i;
 		v1=j;
